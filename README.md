@@ -46,6 +46,15 @@ documentation.
 binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.7+ rsync subversion unzip which
 ```
+```
+# 1. 彻底擦除旧内核、符号表和所有模块缓存
+make target/linux/clean
+make package/kernel/linux/clean
+
+# 2. 全量重新编译固件
+make -j$(nproc) V=s
+
+```
 
 ### Quickstart
 
